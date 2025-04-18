@@ -34,3 +34,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# VegasAilure
+
+**VegasAilure** is an AI-powered vacation planner focused on Las Vegas. Think of it as your stylish, savvy local guide — combining flight, hotel, entertainment, and nightlife booking into a seamless experience. Powered by Agent Ailure, your personal vacation investigator.
+
+## 🛠️ Stack
+
+- **Next.js (App Router)**
+- **Supabase (Auth + DB)**
+- **Google Maps API**
+- **Affiliate APIs**: Vegas.com, Booking.com, RentalCars, more coming soon
+
+## 📦 Install & Run
+
+```bash
+npm install
+npm run dev
+
