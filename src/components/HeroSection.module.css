@@ -1,0 +1,173 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: radial-gradient(ellipse at center, #111 0%, #000 100%);
+  color: white;
+  overflow: hidden;
+}
+
+/* Logo */
+.logoContainer {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  z-index: 5;
+}
+
+.logoNeon {
+  animation: flicker 3s ease-in-out;
+  filter: drop-shadow(0 0 8px #00f);
+}
+
+/* Agent Ailure Character */
+
+.agentAilureWrapper {
+  position: absolute;
+  top: 100px;
+  left: -60px; /* Pull her farther left */
+  z-index: 10;
+  opacity: 0;
+  animation: fadeSlideLeft 1.2s ease-out forwards;
+  animation-delay: 0.6s;
+  transform: translateX(-80px);
+}
+
+.agentAilure {
+  animation: glowPulse 2s infinite;
+  max-height: 500px;
+  width: auto;
+}
+
+/* Chat Box */
+.chatBox {
+  position: relative;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+  animation: panIn 1.2s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.chatInput {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 12px;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.chatText {
+  font-size: 22px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.chatOptions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Pill Buttons */
+.pillButton {
+  background: #000;
+  color: white;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.pillButton::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #ff4d4d,
+    #ffa64d,
+    #ffff4d,
+    #4dff88,
+    #4da6ff,
+    #a64dff,
+    #ff4dd2
+  );
+  filter: blur(6px);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.pillButton:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.pillButton:hover::after {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.9; }
+  50% { opacity: 0.4; }
+  55% { opacity: 1; }
+  60% { opacity: 0.6; }
+  65% { opacity: 1; }
+}
+
+@keyframes glowPulse {
+  0% { filter: drop-shadow(0 0 4px #f00); }
+  50% { filter: drop-shadow(0 0 10px #f00); }
+  100% { filter: drop-shadow(0 0 4px #f00); }
+}
+
+@keyframes panIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+

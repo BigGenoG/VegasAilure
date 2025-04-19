@@ -12,7 +12,9 @@ export default function HomepageHero() {
   };
 
   return (
-    <section className="bg-[#f5f3f0] py-16 px-6 md:px-20 flex flex-col md:flex-row items-center justify-center gap-12">
+    <section className="bg-black py-16 px-6 md:px-20 flex flex-col md:flex-row items-center justify-center gap-12 text-white">
+      
+      {/* Agent Ailure Image */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -20,22 +22,23 @@ export default function HomepageHero() {
         className="flex-shrink-0"
       >
         <Image
-          src="/images/VegasAilure_transparent_logo.png"
+          src="/agent-ailure-neon.png" // Updated to neon image
           alt="Agent Ailure"
-          width={120}
-          height={120}
-          className="rounded-full shadow-lg"
+          width={160}
+          height={360}
+          className="h-auto w-auto"
         />
       </motion.div>
 
+      {/* Right-side Content */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}
         className="max-w-xl w-full"
       >
-        <div className="bg-black text-white rounded-lg p-6 text-lg leading-relaxed shadow-md">
-          Hiya. I’m Ailure your personal AI travel assistant — ask questions, discover, plan and book your next Vegas adventure with me.
+        <div className="bg-zinc-900 text-white rounded-lg p-6 text-lg leading-relaxed shadow-md border border-zinc-700">
+          Hiya. I’m Ailure — your personal AI travel assistant. Ask questions, discover, plan and book your next Vegas adventure with me.
         </div>
 
         <div className="mt-4 flex items-start gap-3">
@@ -45,32 +48,34 @@ export default function HomepageHero() {
             width={32}
             height={32}
           />
-          <div className="border rounded-md p-3 w-full text-sm text-gray-800 bg-white">
-            Tell me about your plans for Las Vegas. Vegas has so many options — let’s discover the perfect fit.
+          <div className="border rounded-md p-3 w-full text-sm text-black bg-white">
+            Tell me about your plans for Las Vegas. There are so many options — let’s find the perfect fit.
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+        {/* CTA Buttons in one horizontal row */}
+        <div className="mt-6 flex flex-wrap sm:flex-nowrap justify-center sm:justify-start gap-4">
           <button
             onClick={() => handleNavigate('/travel/plan')}
-            className="px-4 py-2 border border-gray-600 rounded-full hover:bg-gray-100"
+            className="bg-black border border-cyan-400 text-white px-6 py-2 rounded-full hover:bg-cyan-400 hover:text-black transition"
           >
-            Build me Itinerary
+            🎯 Build Me Itinerary
           </button>
           <button
             onClick={() => handleNavigate('/hotels?family=true')}
-            className="px-4 py-2 border border-gray-600 rounded-full hover:bg-gray-100"
+            className="bg-black border border-yellow-400 text-white px-6 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition"
           >
-            Need a Family Hotel
+            👨‍👩‍👧‍👦 Family Hotel
           </button>
           <button
             onClick={() => handleNavigate('/hotels?lux=true')}
-            className="px-4 py-2 border border-gray-600 rounded-full hover:bg-gray-100"
+            className="bg-black border border-pink-400 text-white px-6 py-2 rounded-full hover:bg-pink-400 hover:text-black transition"
           >
-            Find a Luxurious Resort Hotel
+            🌟 Luxury Resort
           </button>
         </div>
       </motion.div>
     </section>
   );
 }
+

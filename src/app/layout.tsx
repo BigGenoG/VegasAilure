@@ -2,7 +2,9 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
-import AilureChat from '@/components/AilureChat';
+// import AilureChat from '@/components/AilureChat';
+import AgentChatWindow from '../components/AgentChatWindow'; // ← if you’re not using @/ yet
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -13,14 +15,15 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Header />
         {children}
-        <AilureChat />
+       
+        <AgentChatWindow />
       </body>
     </html>
   );

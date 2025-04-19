@@ -23,10 +23,11 @@ export default function Header() {
         </button>
         <Link href="/" className="flex items-center">
           <Image
-            src="/vegas_ailure_text_logo.png"
+            src="/vegasailure_Neon.png"
             alt="Vegas Ailure"
-            width={120}
-            height={35}
+            width={180}
+            height={60}
+            style={{ filter: 'drop-shadow(0 0 8px #00f)' }}
             className="h-auto"
             priority
           />
